@@ -22,6 +22,7 @@ return {
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add your own debuggers here
+	'jonboh/nvim-dap-rr',
     'leoluz/nvim-dap-go',
   },
   keys = function(_, keys)
@@ -104,7 +105,6 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
-
     -- Install golang specific config
     require('dap-go').setup {
       delve = {
